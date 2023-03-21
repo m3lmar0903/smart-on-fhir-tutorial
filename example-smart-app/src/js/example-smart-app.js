@@ -51,7 +51,14 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
           var temp = byCodes('8310-5')
-          var allergies = allergies
+          var allergies = "<table>";          
+          var allergieslen = allergies.length;          
+          for (var i=0;i<allergieslen;i++) {            
+            if (allergieslen === 0) {              
+              allergies += "<tr><td>No allergies documented</td></tr>";            
+            }          
+            allergies += "</table>";          }
+
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
@@ -59,7 +66,7 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
-          p.allergies = allergies;
+          p.allergieslen = allergies;
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
