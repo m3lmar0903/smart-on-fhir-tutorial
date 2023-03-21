@@ -57,9 +57,9 @@
             allergytable += "<div>"+allergies[0].code.text+"</div>";     
                       }
                       if (allergieslen === 0) {              
-                        allergiestable += "<tr><td>No allergies documented</td></tr>";            
+                        allergytable += "<tr><td>No allergies documented</td></tr>";            
                       }          
-                      allergiestable += "</table>";
+                      allergytable += "</table>";
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
