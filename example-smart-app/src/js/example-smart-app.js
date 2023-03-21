@@ -15,8 +15,11 @@
                     type: 'Observation',
                     query: {
                       code: {
-                        $or: ['http://loinc.org|8302-2', 'http://loinc.org|2085-9',
-                              'http://loinc.org|2089-1', 'http://loinc.org|85354-9']
+                        $or: ['http://loinc.org|8302-2', //Height
+                            'http://loinc.org|2085-9', //Blood Pressure
+                              'http://loinc.org|2089-1', //HDL
+                              'http://loinc.org|85354-9' //LDL
+                            ]
                       }
                     }
                   });
