@@ -54,7 +54,7 @@
           var allergytable = "<table>";          
           var allergieslen = allergies.length;          
           for (var i=0;i<allergieslen;i++) {       
-            allergytable += "<div>"+allergies[0].code.text+"</div>";     
+            allergytable += "<div>"+allergies[i].code.text+"</div>";     
                       }
                       if (allergieslen === 0) {              
                         allergytable += "<tr><td>No allergies documented</td></tr>";            
