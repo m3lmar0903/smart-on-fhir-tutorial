@@ -19,7 +19,7 @@
                             'http://loinc.org|2085-9', //Blood Pressure
                               'http://loinc.org|2089-1', //HDL
                               'http://loinc.org|85354-9', //LDL
-                              'http://loinc.org|8310-5'
+                              'http://loinc.org|8310-5' //temp
                             ]
                       }
                     }
