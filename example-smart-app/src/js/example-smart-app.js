@@ -25,14 +25,14 @@
                     }
                   });
 
-        var allergies = smart.patient.api.fetchAll({
+        var alg = smart.patient.api.fetchAll({
           "type": 'AllergyIntolerance',
           "query": {"clinical-status": 'active'}
         });
                   
-        $.when(pt, obv).fail(onError);
+        $.when(pt, obv, alg).fail(onError);
 
-        $.when(pt, obv).done(function(patient, obv) {
+        $.when(pt, obv, alg).done(function(patient, obv, allergies) {
           console.log(allergies)
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
@@ -51,14 +51,15 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
           var temp = byCodes('8310-5')
-          var allergies = "<table>";          
+          var allergytable = "<table>";          
           var allergieslen = allergies.length;          
-          for (var i=0;i<allergieslen;i++) {            
-            if (allergieslen === 0) {              
-              allergies += "<tr><td>No allergies documented</td></tr>";            
-            }          
-            allergies += "</table>";          }
-
+          for (var i=0;i<allergieslen;i++) {       
+            allergytable += "<div>"+allergies[0].code.text+"</div>";     
+                      }
+                      if (allergieslen === 0) {              
+                        allergiestable += "<tr><td>No allergies documented</td></tr>";            
+                      }          
+                      allergiestable += "</table>";
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
@@ -66,7 +67,7 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
-          p.allergieslen = allergies;
+          p.allergieslen = allergytable;
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
