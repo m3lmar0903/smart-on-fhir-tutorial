@@ -51,15 +51,8 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
           var temp = byCodes('8310-5')
-          var allergies = "<table>";
-          var allergieslen = allergies.length;
-          for (var i=0;i<allergieslen;i++) {
-            if (allergieslen === 0) {
-              allergies += "<tr><td>No allergies documented</td></tr>";
-            }
-          allergies += "</table>";
-          }
-
+          var allergies = AllergyIntolerance
+          
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
           p.gender = gender;
