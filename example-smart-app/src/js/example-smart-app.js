@@ -57,7 +57,7 @@
             if (allergieslen === 0) {
               allergies += "<tr><td>No allergies documented</td></tr>";
             }
-          allergies += "</table>?";
+          allergies += "</table>";
           }
 
           var p = defaultPatient();
@@ -104,6 +104,7 @@
       ldl: {value: ''},
       hdl: {value: ''},
       temp: {value: ''},
+      allergies: {value: ''},
     };
   }
 
@@ -148,6 +149,7 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
     $('#temp').html(p.temp);
+    $('#allergies').html(p.allergies);
   };
 
 })(window);
