@@ -33,6 +33,7 @@
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
+          console.log(allergies)
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
@@ -50,6 +51,10 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
           var temp = byCodes('8310-5')
+          var allergies = "<table>";
+          //var allergieslen = allergies.length;
+          //for (var i=0;i<allergieslen;i++) {
+          //  if (allergieslen === 0)}
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
